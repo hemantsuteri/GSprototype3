@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { FiMenu } from "react-icons/fi";
 import { BiSolidMoon, BiSolidSun } from "react-icons/bi";
 // import {Gapsera} from "../../Gapsera.jpg";
-import Gapsera from "../../assets/Gapsera.jpg";
+// import gapsera from "../../assets/gapsera.jpg";
+import gapsera from "../../assets/gapsera.png";
 
 const navMenus = [
   {
@@ -54,7 +55,7 @@ const Navbar = () => {
             <img src={Gapsera} alt="Logo" />
           </h1> */}
           <h1 className="text-3xl text-primary font-bold">
-            <img src={Gapsera} alt="Logo" className="h-[70px] w-[100px] object-contain" />
+            <img src={gapsera} alt="Logo" className="h-[70px] w-[100px] object-contain" />
           </h1>
           {/* Desktop Menu */}
           <div className="hidden sm:block">

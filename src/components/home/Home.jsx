@@ -13,6 +13,7 @@ import About from "../about/About";
 // import Skills from "../skills/Skills";
 import Services from "../services/Services";
 import Footer from "../footer/Footer"
+import { Typewriter } from "react-simple-typewriter";
 
 function Home() {
   return (
