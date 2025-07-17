@@ -3,14 +3,6 @@ import { AiFillLayout } from "react-icons/ai";
 import { MdOutlinePhoneAndroid, MdSecurity } from "react-icons/md";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
 
-// import {
-//   AiFillLayout,
-//   MdOutlinePhoneAndroid,
-//   HiMiniComputerDesktop,
-//   MdSecurity,
-// } from "react-icons/all"; // use your proper imports
-import techConsulting from "../../assets/techConsulting.jpg";
-
 const Services = [
   {
     name: "Tech Consulting",

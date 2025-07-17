@@ -1,16 +1,16 @@
 import Hero from "../hero/Hero";
 import About from "../about/About";
 import Services from "../services/Services";
-import Footer from "../footer/Footer"
+import Footer from "../footer/Footer";
 
-function Home() {
+function Home({ isMenuOpen }) {
   return (
-    <> 
-      <Hero />
+    <>
+      <Hero isMenuOpen={isMenuOpen} />
       <About />
       <Services />
       <Footer />
-      </>
+    </>
   );
 }
 

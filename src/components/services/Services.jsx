@@ -1,5 +1,6 @@
 import React from "react";
 import ServicesBox from "./ServicesBox.jsx";
+import Carousel from "../carousel/Carousel.jsx";
 
 const Services = () => {
   return (
@@ -12,6 +13,7 @@ const Services = () => {
     <p className="text-slate-500 text-center md:w-[50%] mx-auto">
       Empowering your business with expert tech consulting, skilled staffing, and seamless enterprise software support.
     </p>
+    <Carousel/>
   </div>
 
   <div data-aos="fade-up" data-aos-delay="200">
