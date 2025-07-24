@@ -1,26 +1,19 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef } from "react";
-import dynamic365 from "../../assets/dynamic365.jpeg"
-import oracle from "../../assets/oracle.png"
-import salesforce from "../../assets/Salesforce.png"
-import sap from "../../assets/SAP.png"
-import zoho from "../../assets/zoho.png"
+import dynamic365 from "../../assets/dynamic365.jpeg";
+import oracle from "../../assets/oracle.png";
+import salesforce from "../../assets/Salesforce.png";
+import sap from "../../assets/SAP.png";
+import zoho from "../../assets/zoho.png";
 
 const images = [
-  { id: 1, url: dynamic365},
+  { id: 1, url: dynamic365 },
   { id: 2, url: oracle },
   { id: 3, url: salesforce },
   { id: 4, url: sap },
   { id: 5, url: zoho },
 ];
-// const images = [
-//   { id: 1, url: "../../assets/dynamic365.jpeg" },
-//   { id: 2, url: "../../assets/oracle.png" },
-//   { id: 3, url: "../../assets/Salesforce.png" },
-//   { id: 4, url: "../../assets/SAP.png" },
-//   { id: 5, url: "../../assets/zoho.png" },
-// ];
 
 const Carousel = () => {
   const containerRef = useRef(null);
@@ -31,7 +24,7 @@ const Carousel = () => {
       while (true) {
         await controls.start({
           x: "-100%",
-          transition: { duration: 18.75, ease: "linear" }, 
+          transition: { duration: 18.75, ease: "linear" },
         });
         controls.set({ x: 0 });
       }
@@ -54,12 +47,13 @@ const Carousel = () => {
         {[...images, ...images].map((img, idx) => (
           <div
             key={idx}
-            className="min-w-[300px] h-[200px] flex-shrink-0 rounded-xl overflow-hidden shadow-md"
+            className="flex-shrink-0 rounded-xl overflow-hidden shadow-md"
+            style={{ width: "15vw", height: "12vh" }} // 👈 15% width, 12% height of screen
           >
             <img
               src={img.url}
               alt={`carousel-${idx}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain" // 👈 object-contain to preserve aspect ratio
             />
           </div>
         ))}

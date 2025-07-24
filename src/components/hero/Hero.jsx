@@ -6,9 +6,10 @@ import TypingEffect from "../typewriter/Typewriter";
 const Hero = ({ isMenuOpen }) => {
   return (
     <div
-      className={`relative h-screen overflow-hidden transition-transform duration-700 ease-in-out ${
-        isMenuOpen ? "-translate-x-[70vw]" : "translate-x-0"
-      }`}
+      className={`relative h-screen overflow-hidden transition-all duration-700 ease-in-out
+        ${
+          isMenuOpen ? "-translate-x-[70vw] translate-y-[20px]" : "translate-x-0"
+        }`}
       style={{
         width: "100vw",
       }}
@@ -24,7 +25,7 @@ const Hero = ({ isMenuOpen }) => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-30"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-30" />
 
       {/* Typing Effect */}
       <TypingEffect />
