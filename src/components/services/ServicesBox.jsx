@@ -4,34 +4,43 @@ import { AiFillLayout } from "react-icons/ai";
 import { MdOutlinePhoneAndroid, MdSecurity } from "react-icons/md";
 import { HiMiniComputerDesktop } from "react-icons/hi2";
 import { Link } from 'react-router-dom';
+import techConsultingdetailed from "../../assets/techConsultingdetailed.jpg"
+import supportdetail from "../../assets/supportdetail.jpg"
+import resourcedetail from "../../assets/resourcedetail.jpg"
+import recruitementdetail from "../../assets/recruitementdetail.jpg"
 
 const Services = [
   {
     name: "Tech Consulting",
     description: "We provide expert technology strategy and integration services.",
     icon: <AiFillLayout className="text-4xl" />,
-    image: "/images/tech.jpg",
+    // image: "../../assets/techConsultingdetailed.jpg",
+    // image:"../../assets/techConsultingdetailed.jpg",
+    image: techConsultingdetailed,
     bgColor: "bg-[#98A1BC]/70",
   },
   {
     name: "Support",
     description: "24/7 technical support to ensure business continuity.",
     icon: <MdOutlinePhoneAndroid className="text-4xl" />,
-    image: "/images/support.jpg",
+    // image: "../../assets/supportdetail.jpg",
+    image: supportdetail,
     bgColor: "bg-[#98A1BC]/70",
   },
   {
     name: "Resource Availability",
     description: "Access to skilled tech talent across various domains.",
     icon: <HiMiniComputerDesktop className="text-4xl" />,
-    image: "/images/resource.jpg",
+    // image: "../../assets/resourcedetail.jpg",
+    image: resourcedetail,
     bgColor: "bg-[#98A1BC]/70",
   },
   {
     name: "Recruitment",
     description: "Efficient hiring solutions to scale your tech teams.",
     icon: <MdSecurity className="text-4xl" />,
-    image: "/images/recruitment.jpg",
+    // image: "../../assets/recruitementdetail.jpg",
+    image: recruitementdetail,
     bgColor: "bg-[#98A1BC]/70",
   },
 ];

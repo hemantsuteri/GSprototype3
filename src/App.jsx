@@ -21,7 +21,6 @@ function App() {
       <Navbar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Routes>
         <Route path="/" element={<Home isMenuOpen={isMenuOpen} />} />
-        {/* <Route path="/" element={<Home isMenuOpen={isMenuOpen} />} /> */}
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </Router>

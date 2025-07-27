@@ -5,7 +5,6 @@ import Services from "../services/Services";
 import Footer from "../footer/Footer";
 
 function Home({ isMenuOpen }) {
-  // Prevent scrolling when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
@@ -19,12 +18,24 @@ function Home({ isMenuOpen }) {
   }, [isMenuOpen]);
 
   return (
-    <>
+    <div 
+    // className={`
+    className="
+    transition-all
+    duration-700
+    ease-in-out
+    transform
+    h-[100vh] translate-x-0"
+    // transition-transform duration-300 ease-in-out
+    // ${isMenuOpen ? 'scale-70' : ''}
+    // ${!isMenuOpen ? 'hover:scale-70' : ''}
+  // `}
+  >
       <Hero isMenuOpen={isMenuOpen} />
       <About />
       <Services />
       <Footer />
-    </>
+    </div>
   );
 }
 
