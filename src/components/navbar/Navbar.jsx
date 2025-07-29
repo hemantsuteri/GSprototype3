@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { BiSolidMoon, BiSolidSun } from "react-icons/bi";
 import gapsera from "../../assets/gapsera.png";
-import Hero from "../hero/Hero";
 
 const navMenus = [
   { name: "Home", link: "/#home" },
@@ -27,8 +26,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <>
       {/* Fixed Top Navbar */}
-      <nav className="fixed top-0 left-0 w-full h-[15vh] bg-transparent shadow z-50">
-        <div className="container flex justify-between items-center py-3 sm:py-0">
+      <nav className={`fixed top-0 left-0 w-full h-[15vh] bg-transparent shadow z-50 ${isMenuOpen? "hidden" : ""}`}>
+        <div className="bg-transparent container flex justify-between items-center py-3 sm:py-0">
           {/* Logo */}
           <h1 className="text-3xl text-primary font-bold">
             <img src={gapsera} alt="Logo" className="h-[70px] w-[100px] object-contain" />
@@ -80,19 +79,8 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }) => {
         }`}
         onClick={() => setIsMenuOpen(false)}
       >
-        {/* Left Side: Hero (Optional Content) */}
         <div
-          className={`w-[30%] h-[85vh] bg-secondary dark:bg-gray-800 overflow-auto transition-transform duration-700 ease-in-out ${
-            isMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <Hero isMenuOpen={isMenuOpen} />
-        </div>
-
-        {/* Right Side: Menu Items */}
-        <div
-          className={`w-[70%] h-[85vh] bg-white dark:bg-gray-900 dark:text-white shadow-md rounded-l-xl absolute right-0 top-0 transition-transform duration-700 ease-in-out ${
+          className={`w-[100%] h-[100vh] bg-transparent dark:bg-gray-900 dark:text-transparent shadow-md rounded-l-xl absolute right-0 top-0 transition-transform duration-700 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
           onClick={(e) => e.stopPropagation()}
