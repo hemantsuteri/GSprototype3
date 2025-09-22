@@ -5,7 +5,7 @@ const Footer = () => {
     <>
       <footer className="text-center py-6 dark:bg-slate-950 dark:text-white">
         <p className="container">
-          Copyright &copy; Gapsera 2025
+          Copyright &copy; Noventia Consulting 2025
         </p>
       </footer>
     </>

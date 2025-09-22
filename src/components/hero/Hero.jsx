@@ -1,4 +1,3 @@
-import React from "react";
 import backVideo from "../../assets/backVideo.mp4";
 import gapsera from "../../assets/gapsera.png";
 import TypingEffect from "../typewriter/Typewriter";
@@ -6,7 +5,6 @@ import TypingEffect from "../typewriter/Typewriter";
 const Hero = ({ isMenuOpen }) => {
   return (
     <div
-      // className={`relative h-screen overflow-hidden transition-all duration-700 ease-in-out mt-[15vh]
       className="relative h-screen overflow-hidden transition-all duration-700 ease-in-out"
       style={{
         width: "100vw",
@@ -35,7 +33,7 @@ const Hero = ({ isMenuOpen }) => {
             <img src={gapsera} alt="Gapsera" className="h-[15%] w-[15%]" />
           </div>
           <p className="text-3xl sm:text-4xl md:text-6xl font-bold text-black/80 dark:text-white">
-            Gapsera
+            Noventia Consulting
           </p>
           <p className="text-xl sm:text-2xl text-black dark:text-white mt-2">
             The Tech Consulting Firm.

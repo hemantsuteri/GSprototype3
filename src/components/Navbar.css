@@ -1,0 +1,144 @@
+/* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 24px;
+  background-color: white; /* Always white */
+  color: black;            /* Always black text */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 50;
+  /* navbar color */
+  /* background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)); */
+  height: 10vh;
+}
+
+/* Left Section */
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+.navbar-logo {
+  height: 75px;
+  width: 85px;
+  border-radius: 50%;
+  margin-right: -10px;
+}
+/* .navbar-title {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: 3.5px;
+  color: white; 
+} */
+
+.navbar-title h1 {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* you can adjust: 400, 500, 700, etc. */
+  font-style: normal;
+  letter-spacing: 3.5px;
+  font-size: 28px;
+  font-weight: bold;
+  /* navbar color */
+  color: #1e3a8a;
+  /* color: #f9fafb; */
+  letter-spacing: 3px;
+  margin: 0;
+  font-style: Orbitron;
+  height: 33px;
+}
+.navbar-title h2 {
+  font-size: 12px;
+  margin: 0;
+  letter-spacing: -0.3px;
+  color: #111827;
+  /* navbar color */
+  /* color: white; */
+}
+
+/* Desktop Nav */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  font-weight: 600;
+}
+.navbar-links a {
+  text-decoration: none;
+  /* navbar color */
+  /* color: White;  */
+  color: #1e3a8a;
+  /* color: #111827; */
+  font-size: 22px;
+  padding: 0 8px;
+  transition: color 0.3s;
+}
+.navbar-links a:hover {
+  color: #2563eb; 
+  /* background-color: white; */
+  border-radius: 50vh;
+  /* transform: scale(1.25); */
+}
+
+/* Mobile Menu Button */
+.navbar-menu-btn {
+  display: none;
+}
+.navbar-menu-btn button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.navbar-menu-btn button svg{
+  /* stroke: white; */
+  /* navbar color  */
+}
+
+/* Mobile Nav */
+.mobile-nav {
+  position: fixed;
+  top: 0; right: 0;
+  height: 100%;
+  width: 70vw;
+  background-color: white;
+  box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mobile-nav .close-btn {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.mobile-nav ul {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+.mobile-nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+  .navbar-menu-btn {
+    display: flex;
+    align-items: center;
+  }
+}

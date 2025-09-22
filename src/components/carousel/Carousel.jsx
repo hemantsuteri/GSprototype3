@@ -1,6 +1,4 @@
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useRef } from "react";
 import dynamic365 from "../../assets/dynamic365.jpeg";
 import oracle from "../../assets/oracle.png";
 import salesforce from "../../assets/Salesforce.png";
@@ -16,34 +14,9 @@ const images = [
 ];
 
 const Carousel = () => {
-  const containerRef = useRef(null);
-  const controls = useAnimation();
-
-  useEffect(() => {
-    const loopAnimation = async () => {
-      while (true) {
-        await controls.start({
-          x: "-100%",
-          transition: { duration: 18.75, ease: "linear" },
-        });
-        controls.set({ x: 0 });
-      }
-    };
-
-    loopAnimation();
-  }, [controls]);
-
   return (
     <div className="overflow-hidden w-full bg-slate-100 py-6">
-      <motion.div
-        className="flex gap-8"
-        ref={containerRef}
-        animate={controls}
-        drag="x"
-        dragConstraints={{ left: -1000, right: 0 }}
-        whileTap={{ cursor: "grabbing" }}
-        style={{ cursor: "grab" }}
-      >
+      <div className="flex gap-8">
         {[...images, ...images].map((img, idx) => (
           <div
             key={idx}
@@ -57,7 +30,7 @@ const Carousel = () => {
             />
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
