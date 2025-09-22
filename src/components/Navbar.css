@@ -5,83 +5,68 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 9px 24px;
-  background-color: white; /* Always white */
-  color: black;            /* Always black text */
+  flex-wrap: wrap; /* allows wrapping on zoom */
+  padding: 9px 16px;
+  background-color: white;
+  color: black;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   z-index: 50;
-  /* navbar color */
-  /* background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1)); */
-  height: 10vh;
+  min-height: 60px; /* flexible instead of fixed vh */
 }
 
 /* Left Section */
 .navbar-left {
   display: flex;
   align-items: center;
+  flex-shrink: 0; /* prevents logo squishing */
 }
+
 .navbar-logo {
-  height: 75px;
-  width: 85px;
+  height: 60px;
+  width: 70px;
   border-radius: 50%;
-  margin-right: -10px;
+  margin-right: 8px;
 }
-/* .navbar-title {
-  font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  letter-spacing: 3.5px;
-  color: white; 
-} */
 
 .navbar-title h1 {
   font-family: "Orbitron", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700; /* you can adjust: 400, 500, 700, etc. */
-  font-style: normal;
-  letter-spacing: 3.5px;
-  font-size: 28px;
-  font-weight: bold;
-  /* navbar color */
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: clamp(18px, 2vw, 28px); /* responsive */
+  margin: 0;
   color: #1e3a8a;
-  /* color: #f9fafb; */
-  letter-spacing: 3px;
-  margin: 0;
-  font-style: Orbitron;
-  height: 33px;
+  line-height: 1.2;
 }
+
 .navbar-title h2 {
-  font-size: 12px;
+  font-size: clamp(10px, 1.2vw, 14px); /* responsive */
   margin: 0;
-  letter-spacing: -0.3px;
   color: #111827;
-  /* navbar color */
-  /* color: white; */
+  letter-spacing: -0.3px;
 }
 
 /* Desktop Nav */
 .navbar-links {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap; /* wrapping on zoom */
+  gap: 12px;
   list-style: none;
   font-weight: 600;
+  margin: 0;
+  padding: 0;
 }
+
 .navbar-links a {
   text-decoration: none;
-  /* navbar color */
-  /* color: White;  */
   color: #1e3a8a;
-  /* color: #111827; */
-  font-size: 22px;
-  padding: 0 8px;
+  font-size: clamp(14px, 1.5vw, 20px); /* responsive */
+  padding: 4px 8px;
   transition: color 0.3s;
 }
+
 .navbar-links a:hover {
-  color: #2563eb; 
-  /* background-color: white; */
+  color: #2563eb;
   border-radius: 50vh;
-  /* transform: scale(1.25); */
 }
 
 /* Mobile Menu Button */
@@ -92,10 +77,6 @@
   background: none;
   border: none;
   cursor: pointer;
-}
-.navbar-menu-btn button svg{
-  /* stroke: white; */
-  /* navbar color  */
 }
 
 /* Mobile Nav */
@@ -111,6 +92,7 @@
   flex-direction: column;
   align-items: center;
 }
+
 .mobile-nav .close-btn {
   align-self: flex-end;
   background: none;
@@ -118,6 +100,7 @@
   font-size: 24px;
   cursor: pointer;
 }
+
 .mobile-nav ul {
   margin-top: 50px;
   display: flex;
@@ -125,6 +108,7 @@
   gap: 20px;
   list-style: none;
 }
+
 .mobile-nav a {
   text-decoration: none;
   color: black;
@@ -140,5 +124,47 @@
   .navbar-menu-btn {
     display: flex;
     align-items: center;
+  }
+}
+
+/* Shrink navbar items on smaller screens */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 50px;
+    width: 60px;
+  }
+
+  .navbar-title h1 {
+    font-size: 20px; /* smaller NOVENTIA */
+    letter-spacing: 1.5px;
+  }
+
+  .navbar-title h2 {
+    font-size: 10px; /* smaller tagline */
+  }
+
+  .navbar {
+    height: 8vh; /* reduce navbar height */
+    padding: 6px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    height: 40px;
+    width: 48px;
+  }
+
+  .navbar-title h1 {
+    font-size: 16px;
+  }
+
+  .navbar-title h2 {
+    font-size: 9px;
+  }
+
+  .navbar {
+    height: 7vh;
+    padding: 4px 12px;
   }
 }

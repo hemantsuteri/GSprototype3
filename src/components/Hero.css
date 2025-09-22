@@ -1,0 +1,147 @@
+:root{
+  /* tweak these if you want different global scaling */
+  --hero-max-width: 1200px;
+  --hero-padding: clamp(1rem, 3.2vw, 3.5rem);
+  --accent-gradient: linear-gradient(90deg, #001f7a 0%, #6a00ff 50%, #ff007a 100%);
+}
+
+/* Section level */
+.hero-section{
+  width: 100%;
+  padding-top: 13vh;
+  padding-left: var(--hero-padding);
+  padding-right: var(--hero-padding);
+  box-sizing: border-box;
+  background: linear-gradient(
+    to right,
+    rgba(0, 100, 255, 0.12) 0%,
+    rgba(128, 128, 128, 0.06) 50%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+}
+
+/* Container keeps items centered and allows wrapping on small screens */
+.hero-container{
+  max-width: var(--hero-max-width);
+  /* margin: 0 auto; */
+  margin-top: -75px;
+  display: flex;
+  gap: clamp(1rem, 2.4vw, 2.5rem);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* allows stacking on narrow viewports */
+}
+
+/* Image column */
+.hero-image-wrapper{
+  flex: 1 1 45%;      /* grow, shrink, basis */
+  min-width: 280px;   /* prevents image column from collapsing when zoomed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Make image scale fluidly while preserving aspect ratio */
+.hero-image{
+  width: 100%;
+  /* max-width: 640px;  */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Text column */
+.hero-text{
+  flex: 1 1 45%;
+  min-width: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Inner content padding and centering */
+.hero-content{
+  width: 100%;
+  padding: clamp(0.5rem, 1.6vw, 1.25rem);
+  box-sizing: border-box;
+}
+
+/* Fluid, zoom-friendly heading.
+   Uses clamp so the font grows with viewport but remains within limits. */
+.hero-heading{
+  margin: 0 0 0.6rem;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3.6vw, 3.6rem); /* scales with viewport */
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+
+  /* gradient text */
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  text-align: left;
+}
+
+/* Paragraph uses fluid sizing too; keep line-length readable with max-width */
+.hero-paragraph{
+  margin: 0;
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
+  line-height: 1.6;
+  color: #002060; /* navy-like color */
+  font-weight: 600;
+  max-width: 70ch; /* keeps readable measure on very wide screens */
+  text-align: left;
+  text-align: justify;
+}
+
+/* SMALLER SCREENS: stack and center content */
+@media (max-width: 900px){
+  .hero-container{
+    gap: 1rem;
+  }
+
+  .hero-image-wrapper,
+  .hero-text{
+    flex-basis: 100%;
+    min-width: unset;
+  }
+
+  .hero-text{
+    justify-content: center;
+  }
+
+  .hero-content{
+    text-align: center;
+  }
+
+  .hero-heading, .hero-paragraph{
+    text-align: center;
+  }
+
+  .hero-image{
+    max-width: 85%;
+  }
+}
+
+/* VERY TINY SCREENS: make text a bit more compact */
+@media (max-width: 420px){
+  :root{
+    --hero-padding: 1rem;
+  }
+
+  .hero-heading{
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  .hero-paragraph{
+    font-size: clamp(0.95rem, 2.8vw, 1rem);
+  }
+}
