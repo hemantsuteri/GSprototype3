@@ -11,7 +11,7 @@ import VisionMission from './components/VisionMission';
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Helmet } from "react-helmet";
-import logonew3 from "./assets/logonew3.png"
+import logonew3 from "./assets/logonew5.png"
 
 function App() {
   React.useEffect(() => {

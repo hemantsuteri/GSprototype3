@@ -1,26 +1,50 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+const SERVICE_ID = import.meta.env.VITE_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_PUBLIC_KEY;
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [success, setSuccess] = useState("");
+  console.log(PUBLIC_KEY);
+  useEffect(()=>{
+    templateParams.name= formData?.name,
+    templateParams.email= formData?.email,
+    templateParams.message= formData?.message
+    templateParams.subject= formData?.subject
+  }, [formData])
+  const templateParams = {
+          name: "",
+          email: "",
+          message: ""
+  };
 
-  const handleChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    // templateParams = {
+          
+    // };
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
+    if (!templateParams.name || !templateParams.email || !templateParams.message || !templateParams.subject) return;
 
     emailjs.send(
-      "YOUR_SERVICE_ID",
-      "YOUR_TEMPLATE_ID",
-      formData,
-      "YOUR_PUBLIC_KEY"
+      SERVICE_ID,
+      TEMPLATE_ID,
+      templateParams,
+      PUBLIC_KEY
     ).then(() => {
       setSuccess("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
-    }).catch(() => setSuccess("Failed to send message."));
+      setFormData({ name: "", email: "", message: "", subject: "" });
+      setTimeout(()=>{setSuccess("")}, 5000)
+    }).catch((err) => {
+      console.log("error in sending", err); 
+      setSuccess("Failed to send message.")});
+      setTimeout(()=>{setSuccess("")}, 5000)
   };
 
   return (
@@ -31,9 +55,11 @@ const Contact = () => {
         viewport={{ once: true }}
         className="max-w-3xl mx-auto text-center"
       >
-        <h2 className="text-4xl font-bold text-navy mb-8">Contact Us</h2>
+        <h2 className="text-4xl font-bold text-center mb-8 text-blue-900">Contact Us</h2>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
           <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange}
+            className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-navy" />
+          <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange}
             className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-navy" />
           <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange}
             className="p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-navy" />
@@ -45,11 +71,6 @@ const Contact = () => {
         </form>
         {success && <p className="mt-4 text-green-500">{success}</p>}
 
-        {/* Optional floating icons */}
-        {/* <div className="absolute right-4 bottom-4 flex flex-col gap-4">
-          <a href="mailto:example@noventia.com" target="_blank" className="text-navy hover:text-magenta"><FaEnvelope size={24} /></a>
-          <a href="https://linkedin.com" target="_blank" className="text-navy hover:text-magenta"><FaLinkedin size={24} /></a>
-        </div> */}
       </motion.div>
     </section>
   );

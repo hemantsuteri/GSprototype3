@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import backgroundimg from "../assets/homepage9.png";
+import backgroundimg from "../assets/homepage9test.png";
 import "./Hero.css";
 
 const Hero = () => {
@@ -36,7 +36,7 @@ const Hero = () => {
               data-driven insights, we deliver tailored applications and
               end-to-end business solutions. Beyond technology, we specialize
               in talent on-demand, right-skill resourcing, seamless team
-              extension, and trusted advisory — ensuring accelerated project
+              extension, and trusted advisory ensuring accelerated project
               delivery, cost efficiency, and sustainable growth.
             </p>
           </motion.div>

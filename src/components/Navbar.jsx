@@ -4,6 +4,7 @@ import './Navbar.css';
 
 const Navbar = ({ isMenuOpen, setIsMenuOpen }) => (
   <nav className="navbar">
+  <a href="#">
     <div className="navbar-left">
       <img src={logonew3} alt="Noventia Logo" className="navbar-logo" />
       <div className="navbar-title">
@@ -11,6 +12,7 @@ const Navbar = ({ isMenuOpen, setIsMenuOpen }) => (
         <h2>Talent. Technology. Transformation.</h2>
       </div>
     </div>
+    </a>
 
     {/* Desktop Nav */}
     <ul className="navbar-links">

@@ -2,13 +2,14 @@
   /* tweak these if you want different global scaling */
   --hero-max-width: 1200px;
   --hero-padding: clamp(1rem, 3.2vw, 3.5rem);
-  --accent-gradient: linear-gradient(90deg, #001f7a 0%, #6a00ff 50%, #ff007a 100%);
+  /* --accent-gradient: linear-gradient(90deg, #001f7a 0%, #6a00ff 50%, #ff007a 100%); */
+  --accent-gradient: linear-gradient(90deg, navy, purple, magenta) text;;
 }
 
 /* Section level */
 .hero-section{
   width: 100%;
-  padding-top: 13vh;
+  padding-top: 10vh;
   padding-left: var(--hero-padding);
   padding-right: var(--hero-padding);
   box-sizing: border-box;
@@ -22,9 +23,9 @@
 
 /* Container keeps items centered and allows wrapping on small screens */
 .hero-container{
-  max-width: var(--hero-max-width);
+  /* max-width: var(--hero-max-width); */
   /* margin: 0 auto; */
-  margin-top: -75px;
+  /* margin-top: -67px; */
   display: flex;
   gap: clamp(1rem, 2.4vw, 2.5rem);
   align-items: center;
@@ -39,6 +40,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 5vh;
+  flex-basis: 38%;
 }
 
 /* Make image scale fluidly while preserving aspect ratio */
@@ -53,6 +56,7 @@
   margin: 0;
   padding: 0;
   max-width: 100%;
+  height: 85vh;
 }
 
 /* Text column */
@@ -67,6 +71,9 @@
 /* Inner content padding and centering */
 .hero-content{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* gap: 10vh; */
   padding: clamp(0.5rem, 1.6vw, 1.25rem);
   box-sizing: border-box;
 }
@@ -74,9 +81,9 @@
 /* Fluid, zoom-friendly heading.
    Uses clamp so the font grows with viewport but remains within limits. */
 .hero-heading{
-  margin: 0 0 0.6rem;
+  margin: 0 0 3.6rem;
   font-weight: 700;
-  font-size: clamp(1.8rem, 3.6vw, 3.6rem); /* scales with viewport */
+  font-size: clamp(1.8rem, 4vw, 4rem); /* scales with viewport */
   line-height: 1.04;
   letter-spacing: -0.01em;
 
@@ -93,12 +100,13 @@
 /* Paragraph uses fluid sizing too; keep line-length readable with max-width */
 .hero-paragraph{
   margin: 0;
-  font-size: clamp(1rem, 1.6vw, 1.125rem);
-  line-height: 1.6;
+  /* font-size: clamp(1rem, 1.6vw, 1.125rem); */
+  font-size: clamp(1rem, 22px, 2.125rem);
+  line-height: 1.5;
   color: #002060; /* navy-like color */
   font-weight: 600;
   max-width: 70ch; /* keeps readable measure on very wide screens */
-  text-align: left;
+  /* text-align: left; */
   text-align: justify;
 }
 
@@ -122,12 +130,16 @@
     text-align: center;
   }
 
-  .hero-heading, .hero-paragraph{
-    text-align: center;
+  .hero-heading{
+    text-align: left;
+  }
+  .hero-paragraph{
+    text-align: justify;
   }
 
   .hero-image{
     max-width: 85%;
+    height: auto;
   }
 }
 

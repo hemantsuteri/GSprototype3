@@ -28,7 +28,7 @@ const About = () => {
         </ul>
 
         <p className="mt-8 text-lg">
-          At Noventia Consulting, we don’t just provide services — we become your technology partner in growth.
+          At Noventia Consulting, we don’t just provide services; we become your trusted technology partner in growth.
         </p>
       </motion.div>
     </section>

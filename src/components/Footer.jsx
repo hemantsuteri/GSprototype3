@@ -22,8 +22,8 @@ const Footer = () => {
         </div>
         
         {/* Copyright notice */}
-        <p>
-          © {new Date().getFullYear()} Noventia Consulting LLP. All rights reserved.
+        <p>Copyright 
+          © {new Date().getFullYear()}  Noventia Consulting - All Rights Reserved.
         </p>
       </div>
     </footer>
